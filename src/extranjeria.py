@@ -92,7 +92,7 @@ def top_n_extranjeria(registros: list[RegistroExtranjeria], n: int =3) -> list[t
     
     
     
-def barrio_mas_multicultural(registros): 
+def barrio_mas_multicultural(registros:list[RegistroExtranjeria]) -> str:
     '''
     recibe una lista de tuplas de tipo RegistroExtranjeria y devuelve el
     nombre del barrio en el que hay un mayor número de países de procedencia
@@ -110,9 +110,9 @@ def barrio_mas_multicultural(registros):
         else: 
             paises_por_barrio[r.barrio] = {r.pais}
     maximo = max(paises_por_barrio.items(), key = lambda t:len(t[1]))
-    return maximo
+    return maximo[0]
     
-def barrio_con_mas_extranjeros(registros, tipo=None):
+def barrio_con_mas_extranjeros(registros:list[RegistroExtranjeria], tipo:str =None):
     '''
     recibe una lista de tuplas de tipo RegistroExtranjeria y devuelve el 
     nombre del barrio en el que hay un mayor número de extranjeros, bien 
@@ -122,3 +122,13 @@ def barrio_con_mas_extranjeros(registros, tipo=None):
     pass
 
 #https://pastebin.com/wuh5pvYP
+
+
+def pais_mas_representado_por_distrito(registros:list[RegistroExtranjeria]) -> dict[ str:str]:
+    '''
+     recibe una lista de tuplas de tipo RegistroExtranjeria y devuelve un 
+     diccionario de tipo {str:str} en el que las claves son los distritos
+     y los valores los países de los que hay más extranjeros residentes 
+     en cada distrito.
+    '''
+    pass
