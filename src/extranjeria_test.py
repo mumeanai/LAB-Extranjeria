@@ -28,6 +28,12 @@ def test_top_n_extranjeria(datos):
     print("Mostrando los 5 países de los que proceden más residentes:")
     print(top_n_extranjeria(datos, 5))
 
+def test_barrio_con_mas_extranjeros(datos):
+    print("TEST DE LA FUNCIÓN barrio_con_mas_extranjeros:")
+    print('El barrio con más residentes extranjeros es', barrio_con_mas_extranjeros(datos, None))
+    print('El barrio con más hombres residentes extranjeros es', barrio_con_mas_extranjeros(datos, 'Hombres'))
+    print('El barrio con más mujeres residentes extranjeras es ', barrio_con_mas_extranjeros(datos, 'Mujeres'))
+
 if __name__=='__main__':
     datos = lee_datos_extranjeria("data/extranjeriaSevilla.csv")
     test_lee_extranjeria(datos)
@@ -35,3 +41,4 @@ if __name__=='__main__':
     test_secciones_distritos_con_extranjeros_nacionalidades(datos)
     test_total_extranjeros_por_pais(datos)
     test_top_n_extranjeria(datos)
+    test_barrio_con_mas_extranjeros(datos)
